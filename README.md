@@ -2,6 +2,10 @@
 
 <h2>Links:</h2>
 
+http://es6-features.org/#Constants
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript
+
 https://reactjs.org/
 
 https://reactjs.org/docs/create-a-new-react-app.html
