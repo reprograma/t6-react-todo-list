@@ -1,0 +1,25 @@
+.alert {
+    display:flex;
+  }
+  .alert__color-green {
+    background-color:#abd8ab; 
+  }
+  .alert__color-red {
+    background-color:red; 
+  }
+  .alert__color-blue {
+    background-color:blue; 
+  }
+  .alert__texto {
+    font-family: arial;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #ffff;
+    padding: 20px;
+  }
+  .alert__icon {
+    width:20px;
+    height:20px;
+    padding: 20px;
+  }
