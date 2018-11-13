@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 import Login from './pages/login'
+import Signup from './pages/signup'
 
 import * as serviceWorker from './serviceWorker'
 
