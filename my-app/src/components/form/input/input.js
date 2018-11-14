@@ -15,10 +15,12 @@ import './input.css'
 class Input extends React.Component {
     constructor(props){
         super(props)
-        this.state={ message : null }
+        this.state={ 
+            message : null
+        }
     }
     hasError = () => {
-        if(this.state.message){
+        if(this.state.message === null || this.state.message !== ''){
             return true
         }else{
             return false
@@ -29,17 +31,15 @@ class Input extends React.Component {
         const value = e.target.value
         const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         let message = ''
-
-        console.log('hello onchange',value)
         if(this.props.required && value.trim() === ''){
             message = 'Campo Obrigatório'   
-        }else if(this.props.minLength && value.length < this.props.minLength){
+        }else if(this.props.minLength && value.length < (this.props.minLength)){
             message = `Digite pelo menos ${this.props.minLength} caracteres`
         }else if(this.props.type==='email' && !regex.test(value)){
             message= 'Digite um email válido'
         }
-       this.setState({ message : message  },this.props.onChange())
-        
+       this.setState({ message : message  },this.props.onChange)
+       
     }
     render() {
         return (
