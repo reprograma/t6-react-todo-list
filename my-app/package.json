@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@storybook/addon-actions": "^4.0.6",
+    "@storybook/addon-links": "^4.0.6",
+    "@storybook/addon-notes": "^4.0.6",
+    "@storybook/addons": "^4.0.6",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.1"
+    "react-scripts": "2.1.1",
+    "storybook-react-router": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
