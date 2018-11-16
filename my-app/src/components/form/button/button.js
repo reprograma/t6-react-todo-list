@@ -9,7 +9,7 @@ function Button(props){
     }
 
     return(
-        <button disabled={props.desabilitado} className={classes}>
+        <button disabled={props.disabled} className={classes}>
             {props.children}
         </button>
     )

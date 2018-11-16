@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './input.css'
 
 // function Input2(props){
@@ -12,7 +12,7 @@ import './input.css'
 //     )
 // }
 
-class Input extends React.Component {
+class Input extends Component {
     constructor(props){
         super(props)
         this.state={ 
