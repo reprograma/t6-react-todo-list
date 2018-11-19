@@ -1,12 +1,15 @@
 <h1>Todo List React</h1>
 
-<h2>Links:</h2>
 
-Criar Projeto do React do Zero
+<h2>Criar Projeto do React do Zero</h2>
 
 https://reactjs.org/docs/create-a-new-react-app.html
 
+<h2>Links:</h2>
+
+
 React Doc
+
 https://reactjs.org/
 
 
@@ -46,7 +49,7 @@ http://desenvolvimentoparaweb.com/javascript/map-filter-reduce-javascript/
 https://lehtodoapi.herokuapp.com/api-docs
 
 
-Livros e Cursos
+<h2>Livros e Cursos</h2>
 
 Clean Code - Livro 
 https://www.amazon.com.br/C%C3%B3digo-limpo-Robert-C-Martin/dp/8576082675/ref=sr_1_1?ie=UTF8&qid=1542661633&sr=8-1&keywords=clean+codehttps://br.udacity.com/course/object-oriented-javascript--ud015
