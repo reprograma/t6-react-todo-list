@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Menu from './menu'
 import logo from './logo-reprograma.png'
 import './navbar.css'
 
@@ -12,6 +13,7 @@ const Navbar = () => (
                 alt='Reprograma'
             />
         </Link>
+        <Menu />
     </nav>
 )
 
