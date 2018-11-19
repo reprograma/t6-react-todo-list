@@ -11,9 +11,6 @@ const config = {
 }
 
 function api(){
-    config.headers = {
-        user: ''
-    }
     return axios.create(config)
  }
 

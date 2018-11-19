@@ -4,7 +4,7 @@ export function loginUser(user){
     const url = '/users/login'
 
     const data  = {
-        login : user.email,
+        email : user.email,
         password: user.password
     }
 

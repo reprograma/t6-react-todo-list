@@ -13,7 +13,7 @@ const Navbar = () => (
                 alt='Reprograma'
             />
         </Link>
-        <Menu />
+        <Menu  />
     </nav>
 )
 

@@ -9,11 +9,14 @@ import PageNotFound from './pages/pageNotFound'
 import { startServer  } from './infra/api-config'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+  }
   render() {
    startServer()
     return (
       <React.Fragment>
-        <Navbar />
+        <Navbar history={this.props.history} />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/login' component={Login}/>

@@ -1,20 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
+import { Link,Redirect } from 'react-router-dom'
+import { getUser, clearUser } from '../../../infra/local-storage'
 import './menu.css'
 
 
 class Menu extends React.Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = { open : false}
-
+        this.user = getUser()
     }
     handleOpenOrClose = () => {
         this.setState({ open : !this.state.open})
     }
+    handleLoginOrLogout = (e) => {
+        e.preventDefault()
+        console.log(this.user)
+        if(this.user){
+            clearUser()
+        }
+        window.location.reload();
+    }
     render(){
-
+        console.log('hello render')    
         let classesOfButton = 'menu__button'
         let classesOfOptions = 'menu__options'
 
@@ -39,13 +47,14 @@ class Menu extends React.Component {
                           </Link>
                       </li> 
                       <li>
-                          <Link to='/login'>
-                            Login
-                          </Link>
+                          <a onClick={this.handleLoginOrLogout}>
+                            { this.user ? 'Sair' : 'Login'}
+                          </a>
                       </li> 
                 </ul>
             </div>
         )
+        
     }
 }
 
