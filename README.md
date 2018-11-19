@@ -1,11 +1,11 @@
 <h1>Todo List React</h1>
 
 
-<h2>Criar Projeto do React do Zero</h2>
+<h2>Criar Projeto React do Zero</h2>
 
 https://reactjs.org/docs/create-a-new-react-app.html
 
-<h2>Links:</h2>
+<h2>Links das Documentações:</h2>
 
 
 React Doc
