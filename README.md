@@ -39,7 +39,7 @@ React Router
 
 https://reacttraining.com/react-router/web/api/Link
 
-Deploy da APP gratuitamente
+Deploy da API gratuitamente
 
 https://app.netlify.com/
 
