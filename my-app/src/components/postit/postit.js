@@ -1,5 +1,6 @@
 import React from 'react'
 import Form from '../form'
+import { createPostit } from '../../apis/postit.api'
 
 import './postit.css'
 
@@ -28,6 +29,13 @@ class Postit extends React.Component {
             title :  this.state.title,
             text :  this.state.text
         }
+        createPostit(postit)
+            .then((response) =>{
+                console.log(response)
+            })
+            .catch((error)=>{
+                console.log(error)
+            })    
     }
     setTitle = (e) => {
         const inputTitle = e.target.value
