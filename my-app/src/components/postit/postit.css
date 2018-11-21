@@ -1,0 +1,57 @@
+.postit {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    margin: 0 0 1.5rem;
+    background: #ECDDF3;
+    border-radius: 2px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14);
+}
+
+.postit__title {
+    font-weight: bold;
+}
+
+.postit__button-remove {
+    cursor: pointer;
+    margin-left: auto;
+    float: right;
+}
+
+.postit__button-completed {
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-left: auto;
+}
+
+.postit__title,
+.postit__text,
+.postit__button-remove,
+.postit__button-completed {
+    pointer-events: auto;
+    font-size: inherit;
+    padding: 0.5rem;
+    border: none;
+    background: inherit;
+}
+
+.postit__title:focus,
+.postit__text:focus,
+.postit__button-completed:focus {
+    outline: none;
+}
+
+@media (min-width: 992px) {
+    .postit {
+        display: inline-flex;
+        width: 30%;
+    }
+
+    .postit:nth-child(3n + 2) {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}

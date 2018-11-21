@@ -6,12 +6,12 @@ class Home extends React.Component {
     constructor(){
         super()
     }
-    // componentDidMount() {
-    //     console.log('hello componentDidMount foi criado')
-    // }
-    // componentWillUnmount() {
-    //     console.log('hello componentWillUnmount morreu :(')
-    // }
+    componentDidMount() {
+        console.log('hello componentDidMount foi criado')
+    }
+    componentWillUnmount() {
+        console.log('hello componentWillUnmount morreu :(')
+    }
     render(){
         if(getUser()){
              return <div>Hello Home</div>   
