@@ -8,6 +8,8 @@ class Menu extends React.Component {
     constructor(props){
         super(props)
         this.state = { open : false}
+         }
+    componentDidMount() {
         this.user = getUser()
     }
     handleOpenOrClose = () => {
@@ -15,11 +17,6 @@ class Menu extends React.Component {
     }
     handleLoginOrLogout = (e) => {
         e.preventDefault()
-        console.log(this.user)
-        if(this.user){
-            clearUser()
-        }
-        window.location.reload();
     }
     render(){
         console.log('hello render')    
