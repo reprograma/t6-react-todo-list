@@ -32,7 +32,13 @@ class Postit extends React.Component {
         }
         createPostit(postit)
             .then((response) =>{
-                console.log(response)
+                console.log(this)
+                this.props.updatePostits()
+                this.setState({
+                    id : '',
+                    title : '',
+                    text : ''
+                })
             })
             .catch((error)=>{
                 console.log(error)

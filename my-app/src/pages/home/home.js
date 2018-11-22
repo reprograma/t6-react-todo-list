@@ -34,7 +34,7 @@ class Home extends React.Component {
         if(getUser()){
              return (
                 <div className='home'>
-                        <Postit />
+                        <Postit updatePostits={this.getPostits} />
                         {this.state.postits.map((item,index)=>(
                             <Postit 
                                 id={item.id}
