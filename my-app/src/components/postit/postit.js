@@ -7,10 +7,11 @@ import './postit.css'
 class Postit extends React.Component {
     constructor(props){
         super(props)
+        console.log(props)
         this.state = {
-            id: 0,
-            title: '',
-            text: '',
+            id: this.props.id ? this.props.id : 0,
+            title: this.props.title ? this.props.title : '',
+            text: this.props.text ? this.props.text : '',
             editing : false
         }
     }

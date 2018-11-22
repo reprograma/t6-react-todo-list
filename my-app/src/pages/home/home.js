@@ -32,10 +32,19 @@ class Home extends React.Component {
     }
     render(){
         if(getUser()){
-             return this.state.postits.map((item)=>{
-                            console.log('item',item)
-                            return <Postit />
-                    })
+             return (
+                <div className='home'>
+                        <Postit />
+                        {this.state.postits.map((item,index)=>(
+                            <Postit 
+                                id={item.id}
+                                title={item.title}
+                                text={item.desc}
+                                updatePostits={this.getPostits}
+                            />
+                        ))}
+                   </div>
+                )
                     
         }else{
              return <Redirect to='/login' />
