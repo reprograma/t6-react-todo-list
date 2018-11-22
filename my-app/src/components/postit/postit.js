@@ -1,18 +1,18 @@
 import React from 'react'
 import Form from '../form'
-import { createPostit } from '../../apis/postit.api'
+import { createPostit, deletePostit, updatePostitApi } from '../../apis/postit.api'
 
 import './postit.css'
 
 class Postit extends React.Component {
     constructor(props){
         super(props)
-        console.log(props)
         this.state = {
-            id: this.props.id ? this.props.id : 0,
+            id: this.props.id ? this.props.id : null,
             title: this.props.title ? this.props.title : '',
             text: this.props.text ? this.props.text : '',
-            editing : false
+            editing : false,
+            color : this.props.color ? this.props.color   : '#ECDDF3'
         }
     }
     handlePostitClick = () => {
@@ -21,28 +21,65 @@ class Postit extends React.Component {
             editing :  true
         })
     }
-    handlePostitRemove = () =>{
+    handlePostitRemove = (e) =>{
         console.log('handlePostitRemove')
-    }
-    handlePostitSubmit = (e) => {
-        e.preventDefault()
-        const postit = {
-            title :  this.state.title,
-            text :  this.state.text
-        }
-        createPostit(postit)
+        e.stopPropagation()
+        const id =  this.state.id
+        deletePostit(id)
             .then((response) =>{
-                console.log(this)
+                console.log(response)
                 this.props.updatePostits()
-                this.setState({
-                    id : '',
-                    title : '',
-                    text : ''
-                })
             })
             .catch((error)=>{
                 console.log(error)
-            })    
+            })
+
+    }
+    handlePostitSubmit = (e) => {
+        e.preventDefault()
+
+        if(this.state.id){
+            const postit = {
+                title :  this.state.title,
+                text :  this.state.text,
+                id : this.state.id,
+                color: this.state.color
+            }
+            updatePostitApi(postit)
+                .then((reponse)=>{
+                    this.setState({
+                        editing : false
+                    })
+                })
+                .catch((error)=>{
+                    console.log(error)
+                }) 
+
+        }else{
+
+            const postit = {
+                title :  this.state.title,
+                text :  this.state.text,
+                color: this.state.color
+            }
+
+            createPostit(postit)
+                .then((response) =>{
+                    console.log(this)
+                    this.props.updatePostits()
+                    this.setState({
+                        id : '',
+                        title : '',
+                        text : '',
+                        color: '#ECDDF3',
+                        editing: false
+                    })
+                })
+                .catch((error)=>{
+                    console.log(error)
+                })        
+        }
+   
     }
     setTitle = (e) => {
         const inputTitle = e.target.value
@@ -57,12 +94,19 @@ class Postit extends React.Component {
             text :  inputText
         })
     }
+    setColor = (e) =>{
+       this.setState({
+           color : e.target.value
+       })
+    }
     render() {
         return (
-            <div onClick={this.handlePostitClick} className='postit'>
+            <div onClick={this.handlePostitClick} className='postit' style={{ background : this.state.color }}>
+                <input className='postit__color' type='color' onChange={this.setColor}/>
                 <Form onSubmit={this.handlePostitSubmit}>
                     {this.state.editing  && (
                                 <button 
+                                    type='button'
                                     onClick={this.handlePostitRemove} 
                                     className='postit__button-remove'
                                 >
@@ -71,6 +115,7 @@ class Postit extends React.Component {
                             )
 
                     }
+                    
                    <input 
                         type='text' 
                         className='postit__title' 

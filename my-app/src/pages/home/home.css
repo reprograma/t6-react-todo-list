@@ -1,0 +1,12 @@
+/* .home {
+    margin-top :  20px;
+    display: flex;
+    flex-direction: column;
+} */
+
+@media (min-width: 992px) {
+    .home {
+        flex-direction: row;
+    }
+
+}

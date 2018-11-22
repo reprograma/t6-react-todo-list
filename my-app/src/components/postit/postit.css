@@ -1,7 +1,7 @@
 .postit {
     font-size: 1rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     box-sizing: border-box;
     width: 100%;
     padding: 1rem;
@@ -11,6 +11,16 @@
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14);
 }
 
+.postit__color {
+    border-radius: 100%;
+    background-color: transparent;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    /* float: right; */
+    display: block;
+    margin-left: auto;
+}
 .postit__title {
     font-weight: bold;
 }
