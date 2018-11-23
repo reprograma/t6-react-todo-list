@@ -1,12 +1,28 @@
-/* .home {
-    margin-top :  20px;
-    display: flex;
-    flex-direction: column;
-} */
+
+.home__search {
+    font-size: 1rem;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0 0 1rem;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.home__search:focus {
+    outline: none;
+    border-color: #9351b4;
+    box-shadow: 0 0 10px #9351b4;
+}
 
 @media (min-width: 992px) {
-    .home {
-        flex-direction: row;
+    .home__search {
+       width: 50%;
+       margin: 0 auto;
+       margin-bottom: 10px;
+       margin-top: 10px;
     }
 
 }

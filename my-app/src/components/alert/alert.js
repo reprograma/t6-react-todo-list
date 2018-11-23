@@ -1,11 +1,14 @@
 import React from 'react'
-import './alert.css'
+import Dialog from '@material-ui/core/Dialog'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import Button from '@material-ui/core/Button'
 
-function Alert(props) {
+const Alert = (props) => {
     return (
-     <div className={`alert alert__color-${props.color}`} >
-         <p className='alert__texto'>{props.children} </p>
-     </div>
+     <Dialog open={props.open}>
+        <DialogTitle>{props.children}</DialogTitle>
+        <Button onClick={props.handleOnClick}>Ok</Button>
+     </Dialog>
     )
   }
  

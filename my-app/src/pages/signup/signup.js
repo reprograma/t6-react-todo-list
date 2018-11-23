@@ -24,14 +24,13 @@ import { setUser } from '../../infra/local-storage'
 // }
 
 class Signup extends React.Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = { disabled : true }
         this.name =  React.createRef()
         this.email = React.createRef()
         this.phone = React.createRef()
         this.password = React.createRef()
-        
     }
     handleSubmit= (e) => {
 
@@ -53,6 +52,7 @@ class Signup extends React.Component{
         .then((response) => {
             setUser({ email : user.email})
             this.props.history.push('/')
+            this.props.showAlert('Usuário Cadastrado com Sucesso')
         })
         .catch((error) => {
             console.log(error)

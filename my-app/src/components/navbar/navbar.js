@@ -4,7 +4,7 @@ import Menu from './menu'
 import logo from './logo-reprograma.png'
 import './navbar.css'
 
-const Navbar = () => (
+const Navbar = (props) => (
     <nav className='navbar'>
         <Link to='/'>
             <img 
@@ -13,7 +13,7 @@ const Navbar = () => (
                 alt='Reprograma'
             />
         </Link>
-        <Menu  />
+        <Menu user={props.user} history={props.history}/>
     </nav>
 )
 

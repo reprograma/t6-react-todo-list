@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link,Redirect } from 'react-router-dom'
-import { getUser, clearUser } from '../../../infra/local-storage'
 import './menu.css'
 
 
@@ -8,15 +7,17 @@ class Menu extends React.Component {
     constructor(props){
         super(props)
         this.state = { open : false}
-         }
-    componentDidMount() {
-        this.user = getUser()
     }
+
     handleOpenOrClose = () => {
         this.setState({ open : !this.state.open})
     }
     handleLoginOrLogout = (e) => {
         e.preventDefault()
+        if(this.props.user){
+            localStorage.clear()
+        }
+        this.props.history.push('/login')
     }
     render(){
         console.log('hello render')    
@@ -45,7 +46,7 @@ class Menu extends React.Component {
                       </li> 
                       <li>
                           <a onClick={this.handleLoginOrLogout}>
-                            { this.user ? 'Sair' : 'Login'}
+                            { this.props.user ? 'Sair' : 'Login'}
                           </a>
                       </li> 
                 </ul>
